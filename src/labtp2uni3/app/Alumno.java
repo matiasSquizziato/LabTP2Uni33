@@ -6,6 +6,7 @@ package labtp2uni3.app;
 
 import java.util.HashSet;
 import java.util.Objects;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,7 +18,7 @@ public class Alumno {
     private String nombre;
     private String apellido;
 
-     public static HashSet<Alumno> alumnos = new HashSet<>();
+     public static HashSet<Materia> materias = new HashSet<>();
     
     public Alumno(int legajo, String nombre, String apellido) {
         this.legajo = legajo;
@@ -85,6 +86,18 @@ public class Alumno {
     }
     
   
+    public void agregarMaterias(Materia Mate){
+        
+        if (materias.add(Mate) == true) {
+            
+            JOptionPane.showMessageDialog(null,"El alumno se inscribio correctamente");
+            
+        } else {
+            
+            JOptionPane.showMessageDialog(null, "El alumno ya se encuentra Inscripto");
+        }
+        
+    }
     
     
 }

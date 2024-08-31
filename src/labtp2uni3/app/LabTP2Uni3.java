@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package labtp2uni3;
+package labtp2uni3.app;
+
+import labtp2uni3.app.Materia;
 
 /**
  *
@@ -15,9 +17,9 @@ public class LabTP2Uni3 {
      */
     public static void main(String[] args) {
 
-     //parte2
+     Materia inglesI = new Materia(01,"Ingles I", 1);
         
-        // TODO code application logic here
+        
     }
     
 }

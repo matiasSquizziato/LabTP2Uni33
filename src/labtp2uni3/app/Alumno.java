@@ -19,6 +19,7 @@ public class Alumno {
     private String apellido;
 
      public static HashSet<Materia> materias = new HashSet<>();
+     public static HashSet<Alumno> listaAlumnos = new HashSet<>();
     
     public Alumno(int legajo, String nombre, String apellido) {
         this.legajo = legajo;
@@ -99,5 +100,12 @@ public class Alumno {
         
     }
     
+    public void mostrarAlumnos(){
+        
+        for (Alumno alumnos : listaAlumnos ) {
+             System.out.println(alumnos);
+        }
+        
+    }
     
 }

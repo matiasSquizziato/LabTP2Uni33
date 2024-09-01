@@ -19,7 +19,11 @@ public class LabTP2Uni3 {
 
      Materia inglesI = new Materia(01,"Ingles I", 1);
         
-        
+     Alumno alu = new Alumno(01,"ma","me");
+     
+     alu.mostrarAlumnos();
+     
+     
     }
     
 }

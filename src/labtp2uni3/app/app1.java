@@ -34,6 +34,7 @@ public class app1 extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        listAlu = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
@@ -62,11 +63,25 @@ public class app1 extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
+        listAlu.setText("Listado");
+        listAlu.setToolTipText("");
+        listAlu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listAluActionPerformed(evt);
+            }
+        });
+        jMenu1.add(listAlu);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Materias");
 
         jMenuItem2.setText("Agregar Materias");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem2);
 
         jMenuBar1.add(jMenu2);
@@ -97,6 +112,7 @@ public class app1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Ingreso al inter de alumno
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         
         interAlumno inAlumno = new interAlumno();
@@ -105,6 +121,28 @@ public class app1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    //Ingreso a un listado de alumno
+    private void listAluActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listAluActionPerformed
+
+          interTable inTable = new interTable();
+          escritorio.add(inTable);
+          inTable.setVisible(true);
+        
+
+    }//GEN-LAST:event_listAluActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+         
+       interMaterias inMateria = new interMaterias();
+       escritorio.add(inMateria);
+       inMateria.setVisible(true);
+        
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -149,6 +187,7 @@ public class app1 extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem listAlu;
     // End of variables declaration//GEN-END:variables
 
     

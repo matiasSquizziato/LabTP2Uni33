@@ -4,7 +4,9 @@
  */
 package labtp2uni3.app;
 
+import java.util.HashSet;
 import java.util.Objects;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,6 +24,9 @@ public class Materia {
         this.year = year;
     }
 
+      public static HashSet<Materia> listaMaterias = new HashSet<>();
+
+    
     public int getIdMateria() {
         return idMateria;
     }
@@ -80,6 +85,21 @@ public class Materia {
         }
         return Objects.equals(this.nombre, other.nombre);
     }
+    
+    
+    public void cargarMaterias(Materia materia){
+        
+        if (listaMaterias.add(materia)== true) {
+            
+            JOptionPane.showMessageDialog(null, "Materia Cargada");
+  
+            
+        } else {
+            
+            JOptionPane.showMessageDialog(null, "Materia " + "''"+ materia.getNombre() + "''"+ " ya fue cargada");
+        }
+    }
+    
     
     
 

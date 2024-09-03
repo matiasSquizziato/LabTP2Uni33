@@ -4,8 +4,6 @@
  */
 package labtp2uni3.app;
 
-import labtp2uni3.app.Materia;
-
 /**
  *
  * @author matiSqui
@@ -17,12 +15,8 @@ public class LabTP2Uni3 {
      */
     public static void main(String[] args) {
 
-     Materia inglesI = new Materia(01,"Ingles I", 1);
-        
-     Alumno alu = new Alumno(01,"ma","me");
-     
-     alu.mostrarAlumnos();
-     
+ 
+
      
     }
     

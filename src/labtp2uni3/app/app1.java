@@ -11,8 +11,8 @@ import java.util.HashSet;
  * @author matiSqui
  */
 public class app1 extends javax.swing.JFrame {
-    public static HashSet<Alumno> listaAlumnos = new HashSet<>();
-    public static HashSet<Materia> listaMaterias = new HashSet<>();
+   // public static HashSet<Alumno> listaAlumnos = new HashSet<>();
+    //public static HashSet<Materia> listaMaterias = new HashSet<>();
 
     /**
      * Creates new form app1
@@ -38,6 +38,7 @@ public class app1 extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        Inscripciones = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,6 +88,15 @@ public class app1 extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Registro");
+
+        Inscripciones.setText("Inscripciones");
+        Inscripciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InscripcionesActionPerformed(evt);
+            }
+        });
+        jMenu3.add(Inscripciones);
+
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Salir");
@@ -106,7 +116,7 @@ public class app1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
 
         pack();
@@ -139,13 +149,14 @@ public class app1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    
-    
-    
-    
-    /**
-     * @param args the command line arguments
-     */
+    private void InscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InscripcionesActionPerformed
+        
+         interInscrip inInscrip = new interInscrip();
+         escritorio.add(inInscrip);
+         inInscrip.setVisible(true); 
+         
+    }//GEN-LAST:event_InscripcionesActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -179,6 +190,7 @@ public class app1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Inscripciones;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -192,9 +204,7 @@ public class app1 extends javax.swing.JFrame {
 
     
     
-    private void agregarAlumnos(){
-        
-    }
+ 
     
 
 

@@ -18,7 +18,6 @@ public class Alumno {
     private String nombre;
     private String apellido;
 
-     public static HashSet<Materia> materias = new HashSet<>();
      public static HashSet<Alumno> listaAlumnos = new HashSet<>();
     
     public Alumno(int legajo, String nombre, String apellido) {
@@ -53,7 +52,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "Alumno{" + "legajo=" + legajo + ", nombre=" + nombre + ", apellido=" + apellido + '}';
+        return "Legajo: " + legajo + ", "+nombre + ", "+ apellido;
     }
 
     @Override
@@ -86,26 +85,41 @@ public class Alumno {
         return Objects.equals(this.apellido, other.apellido);
     }
     
-  
-    public void agregarMaterias(Materia Mate){
+    
+    public String getNombreCompleto(){
         
-        if (materias.add(Mate) == true) {
+        return nombre + "" + apellido;        
+    }
+    
+    public void agregarAlumnos(Alumno alumnoNuevo){
+        
+        
+      
+        
+        if (listaAlumnos.add(alumnoNuevo) == true) {
             
-            JOptionPane.showMessageDialog(null,"El alumno se inscribio correctamente");
+            JOptionPane.showMessageDialog(null, "Alumno cargado");
             
         } else {
             
-            JOptionPane.showMessageDialog(null, "El alumno ya se encuentra Inscripto");
+             JOptionPane.showMessageDialog(null, "Alumno" + alumnoNuevo.getApellido() + " ya fue cargado");
         }
-        
+            
     }
-    
-    public void mostrarAlumnos(){
-        
-        for (Alumno alumnos : listaAlumnos ) {
-             System.out.println(alumnos);
-        }
-        
-    }
+  
+//    public void agregarMaterias(Materia Mate){
+//        
+//        if (materias.add(Mate) == true) {
+//            
+//            JOptionPane.showMessageDialog(null,"El alumno se inscribio correctamente");
+//            
+//        } else {
+//            
+//            JOptionPane.showMessageDialog(null, "El alumno ya se encuentra Inscripto");
+//        }
+//        
+//    }
+//    
+   
     
 }

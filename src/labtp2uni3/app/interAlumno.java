@@ -20,7 +20,7 @@ public class interAlumno extends javax.swing.JInternalFrame {
     public interAlumno() {
         
         initComponents();
-        actualizarJComboBox();
+       
     }
 
     @SuppressWarnings("unchecked")
@@ -37,7 +37,6 @@ public class interAlumno extends javax.swing.JInternalFrame {
         btGuardar = new javax.swing.JButton();
         btNuevo = new javax.swing.JButton();
         btSalir = new javax.swing.JButton();
-        jcbAlumno = new javax.swing.JComboBox<>();
 
         jLabel1.setText("Formulario de Alumnos");
 
@@ -91,14 +90,11 @@ public class interAlumno extends javax.swing.JInternalFrame {
                 .addContainerGap(70, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jcbAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btGuardar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btNuevo)
-                        .addGap(22, 22, 22)
-                        .addComponent(btSalir)))
+                .addComponent(btGuardar)
+                .addGap(18, 18, 18)
+                .addComponent(btNuevo)
+                .addGap(22, 22, 22)
+                .addComponent(btSalir)
                 .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
@@ -123,9 +119,7 @@ public class interAlumno extends javax.swing.JInternalFrame {
                     .addComponent(btGuardar)
                     .addComponent(btNuevo)
                     .addComponent(btSalir))
-                .addGap(52, 52, 52)
-                .addComponent(jcbAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
@@ -141,7 +135,6 @@ public class interAlumno extends javax.swing.JInternalFrame {
       
         
         alumnoNuevo.agregarAlumnos(alumnoNuevo);
-        actualizarJComboBox();
         
         
         //Limpia los campos una vez creado el elemnto
@@ -151,17 +144,7 @@ public class interAlumno extends javax.swing.JInternalFrame {
   
     }//GEN-LAST:event_btGuardarActionPerformed
 
-    
-    private void actualizarJComboBox() {
-
-    for (Alumno alumno : listaAlumnos) {
-       
-        String nombreCompleto = alumno.getNombre() + " " + alumno.getApellido();
-        
-        jcbAlumno.addItem(nombreCompleto);
-    }
-}
-    
+  
     private void btNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNuevoActionPerformed
         txNumLegajo.setText("");
         txNombre.setText("");
@@ -184,7 +167,6 @@ public class interAlumno extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JComboBox<String> jcbAlumno;
     private javax.swing.JTextField txApellido;
     private javax.swing.JTextField txNombre;
     private javax.swing.JTextField txNumLegajo;

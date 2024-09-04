@@ -4,6 +4,7 @@
  */
 package labtp2uni3.app;
 
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import static labtp2uni3.app.Alumno.listaAlumnos;
 
@@ -23,6 +24,7 @@ public class interTable extends javax.swing.JInternalFrame {
     public interTable() {
         initComponents();
         armarCabecera();
+        mostrarDatos();
         //mostrarDatos(listaAlumnos);
     }
 
@@ -73,10 +75,10 @@ public class interTable extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(jButton1))
-                .addContainerGap(7, Short.MAX_VALUE))
+                    .addComponent(jButton1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(407, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,17 +115,34 @@ private void armarCabecera(){
     modelo.addColumn("Legajo");
     modelo.addColumn("Nombre");
     modelo.addColumn("Apellido");
+    modelo.addColumn("Materias");
     
     jTalumnos.setModel(modelo);
 }
 
-private void mostrarDatos(){
-    
-    
-     
-          
+private void mostrarDatos() {
+    modelo.setRowCount(0);
+
+    for (Alumno alumno : listaAlumnos) {
+        Object[] fila = new Object[4];
+        fila[0] = alumno.getLegajo();
+        fila[1] = alumno.getNombre();
+        fila[2] = alumno.getApellido();
+
+//        StringBuilder materiasStr = new StringBuilder();
+//        for (Materia materia : alumno.getMateriasIns()) {
+//            materiasStr.append(materia.getIdMateria()).append(", ");
+//        }
+//        if (materiasStr.length() > 0) {
+//            materiasStr.deleteCharAt(materiasStr.length() - 2);
+//        } else {
+//            materiasStr.append("Ninguna materia");
+//        }
+
+        fila[3] = alumno.getMateriasIns();
+        modelo.addRow(fila);
     }
-      
+}
      
     
   }

@@ -125,6 +125,7 @@ public final class interInscrip extends javax.swing.JInternalFrame {
             jcbMaterias.removeAllItems();
             for (Materia materias : listaMaterias) {
                 if (!alumnoSelect.getMateriasIns().contains(materias)) {
+                    //
                     jcbMaterias.addItem(materias);
                 }
             }

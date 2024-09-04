@@ -102,10 +102,7 @@ public class Alumno {
     }
     
     public void agregarAlumnos(Alumno alumnoNuevo){
-        
-        
-      
-        
+   
         if (listaAlumnos.add(alumnoNuevo) == true) {
             
             JOptionPane.showMessageDialog(null, "Alumno cargado");

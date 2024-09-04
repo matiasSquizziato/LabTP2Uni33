@@ -117,7 +117,30 @@ public final class interInscrip extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jcbAlumnoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+
+        Alumno alumnoSelect = (Alumno) jcbAlumno.getSelectedItem();
+        
+        
+        if (alumnoSelect != null) {
+            jcbMaterias.removeAllItems();
+            for (Materia materias : listaMaterias) {
+                if (!alumnoSelect.getMateriasIns().contains(materias)) {
+                    jcbMaterias.addItem(materias);
+                }
+            }
+        }
+        
+        
+        Materia materiaSelect = (Materia) jcbMaterias.getSelectedItem();
+        
+        
+        alumnoSelect.agregarMateInscrip(materiaSelect);
+        
+       
+        
+        JOptionPane.showMessageDialog(null, "El alumno " + alumnoSelect.getNombre() +
+            " se inscribió correctamente a " + materiaSelect.getNombre());
+            //"\nMaterias Inscriptas: " + alumnoSelect.getMateriasInscriptas());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalirActionPerformed

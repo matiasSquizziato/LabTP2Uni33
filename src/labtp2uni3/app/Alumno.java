@@ -4,6 +4,8 @@
  */
 package labtp2uni3.app;
 
+import java.awt.List;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 import javax.swing.JOptionPane;
@@ -17,13 +19,21 @@ public class Alumno {
     private int legajo;
     private String nombre;
     private String apellido;
-
+    private ArrayList <Materia> listaInscrip;
+    
      public static HashSet<Alumno> listaAlumnos = new HashSet<>();
+     public static HashSet<Materia> listaMaterias = new HashSet<>();
+    // private static ArrayList<Materia> listaInscrip = new ArrayList<>();
+     
+
+     
     
     public Alumno(int legajo, String nombre, String apellido) {
+        this.listaInscrip = new ArrayList<>();
         this.legajo = legajo;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.listaInscrip = new ArrayList<>();
     }
 
     public int getLegajo() {
@@ -107,19 +117,40 @@ public class Alumno {
             
     }
   
-//    public void agregarMaterias(Materia Mate){
-//        
-//        if (materias.add(Mate) == true) {
-//            
-//            JOptionPane.showMessageDialog(null,"El alumno se inscribio correctamente");
-//            
-//        } else {
-//            
-//            JOptionPane.showMessageDialog(null, "El alumno ya se encuentra Inscripto");
-//        }
-//        
-//    }
-//    
-   
+    public void agregarMaterias(Materia Mate){
+        
+        if (listaMaterias.add(Mate) == true) {
+            
+            JOptionPane.showMessageDialog(null,"Materia creada correctamente");
+            
+            
+            
+            
+        } else {
+            
+            JOptionPane.showMessageDialog(null, "La materia ya se encuentra creada");
+        }
+        
+    }
     
+    public void agregarMateInscrip(Materia mate) {
+    if (!listaInscrip.contains(mate)) {
+        
+         listaInscrip.add(mate);
+         
+            JOptionPane.showMessageDialog(null, "El alumno se inscribió correctamente");
+    } else {
+        JOptionPane.showMessageDialog(null, "El alumno ya se encuentra inscripto");
+    }
+    
+    }
+
+    public ArrayList<Materia> getMateriasIns(){
+        return listaInscrip;
+    }
+    
+    public int cantMateriasIns(){
+        return listaInscrip.size();
+    }
+   
 }

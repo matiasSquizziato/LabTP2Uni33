@@ -23,7 +23,7 @@ public class interTable extends javax.swing.JInternalFrame {
     public interTable() {
         initComponents();
         armarCabecera();
-        mostrarDatos(listaAlumnos);
+        //mostrarDatos(listaAlumnos);
     }
 
     /**
@@ -117,21 +117,17 @@ private void armarCabecera(){
     jTalumnos.setModel(modelo);
 }
 
-private void mostrarDatos(Iterable <Alumno> alumnos){
+private void mostrarDatos(){
     
-      for (Alumno alumno : alumnos) {
-            String legajoStr = String.valueOf(alumno.getLegajo()); 
-            String nombre = alumno.getNombre();
-            String apellido = alumno.getApellido();
-            modelo.addRow(new Object[]{legajoStr, nombre, apellido});
-          
+    
+     
           
     }
       
      
     
   }
-}
+
 
     
  

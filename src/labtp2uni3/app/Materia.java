@@ -4,9 +4,9 @@
  */
 package labtp2uni3.app;
 
-import java.util.HashSet;
 import java.util.Objects;
 import javax.swing.JOptionPane;
+import static labtp2uni3.app.Alumno.listaMaterias;
 
 /**
  *
@@ -24,7 +24,6 @@ public class Materia {
         this.year = year;
     }
 
-      public static HashSet<Materia> listaMaterias = new HashSet<>();
 
     
     public int getIdMateria() {

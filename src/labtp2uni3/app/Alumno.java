@@ -130,16 +130,16 @@ public class Alumno {
         
     }
     
+  
     public void agregarMateInscrip(Materia mate) {
-    if (!listaInscrip.contains(mate)) {
         
-         listaInscrip.add(mate);
-         
-            JOptionPane.showMessageDialog(null, "El alumno se inscribió correctamente");
-    } else {
-        JOptionPane.showMessageDialog(null, "El alumno ya se encuentra inscripto");
-    }
-    
+        if (!listaInscrip.contains(mate)) {
+            listaInscrip .add(mate);
+            JOptionPane.showMessageDialog(null, "El alumno se inscribió correctamente" + mate.getNombre());
+        } else {
+            
+            JOptionPane.showMessageDialog(null, "El alumno ya se encuentra inscripto");
+        }
     }
 
     public ArrayList<Materia> getMateriasIns(){

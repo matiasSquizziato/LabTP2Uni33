@@ -7,6 +7,7 @@ package labtp2uni3.app;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import static labtp2uni3.app.Alumno.listaAlumnos;
+import static labtp2uni3.app.Alumno.listaMaterias;
 
 /**
  *
@@ -128,6 +129,7 @@ private void mostrarDatos() {
         fila[0] = alumno.getLegajo();
         fila[1] = alumno.getNombre();
         fila[2] = alumno.getApellido();
+        
 
 //        StringBuilder materiasStr = new StringBuilder();
 //        for (Materia materia : alumno.getMateriasIns()) {
@@ -139,8 +141,10 @@ private void mostrarDatos() {
 //            materiasStr.append("Ninguna materia");
 //        }
 
-        fila[3] = alumno.getMateriasIns();
+        fila[3] = alumno.cantMateriasIns();
         modelo.addRow(fila);
+
+        
     }
 }
      

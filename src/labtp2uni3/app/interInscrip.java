@@ -139,25 +139,10 @@ public final class interInscrip extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         Alumno alumnoSelect = (Alumno) jcbAlumno.getSelectedItem();
-
-        if (alumnoSelect != null) {
-            jcbMaterias.removeAllItems();
-            for (Materia materias : listaMaterias) {
-                
-                if (!alumnoSelect.getMateriasIns().contains(materias)) {
-                    
-                    jcbMaterias.addItem(materias);
-                }
-            }
-        }
         
         Materia materiaSelect = (Materia) jcbMaterias.getSelectedItem();
         
-        alumnoSelect.agregarMateInscrip(materiaSelect);
-        
-    
-        
-              
+        alumnoSelect.agregarMateInscrip(materiaSelect);    
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -168,8 +153,6 @@ public final class interInscrip extends javax.swing.JInternalFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-        revalidate();
-        repaint();
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

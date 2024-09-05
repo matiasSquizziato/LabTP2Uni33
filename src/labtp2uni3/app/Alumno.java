@@ -19,11 +19,11 @@ public class Alumno {
     private int legajo;
     private String nombre;
     private String apellido;
-    private ArrayList <Materia> listaInscrip;
+    ArrayList <Materia> listaInscrip;
     
      public static HashSet<Alumno> listaAlumnos = new HashSet<>();
      public static HashSet<Materia> listaMaterias = new HashSet<>();
-    // private static ArrayList<Materia> listaInscrip = new ArrayList<>();
+    
      
 
      
@@ -131,18 +131,23 @@ public class Alumno {
     }
     
   
-    public void agregarMateInscrip(Materia mate) {
+    public int agregarMateInscrip(Materia mate) {
         
         if (!listaInscrip.contains(mate)) {
             listaInscrip .add(mate);
             JOptionPane.showMessageDialog(null, "El alumno se inscribió correctamente" + mate.getNombre());
+            System.out.println(listaInscrip.size());
         } else {
             
             JOptionPane.showMessageDialog(null, "El alumno ya se encuentra inscripto");
         }
+        
+        
+        return listaInscrip.size();
     }
 
     public ArrayList<Materia> getMateriasIns(){
+        System.out.println(listaInscrip.size());
         return listaInscrip;
     }
     

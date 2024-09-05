@@ -4,10 +4,9 @@
  */
 package labtp2uni3.app;
 
-import java.util.ArrayList;
+
 import javax.swing.table.DefaultTableModel;
 import static labtp2uni3.app.Alumno.listaAlumnos;
-import static labtp2uni3.app.Alumno.listaMaterias;
 
 /**
  *
@@ -45,19 +44,16 @@ public class interTable extends javax.swing.JInternalFrame {
 
         jTalumnos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Legajo", "Nombre", "Apellido"
+                "Legajo", "Nombre", "Apellido", "Materias"
             }
         ));
         jScrollPane1.setViewportView(jTalumnos);
-        if (jTalumnos.getColumnModel().getColumnCount() > 0) {
-            jTalumnos.getColumnModel().getColumn(2).setResizable(false);
-        }
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Listado de Alumnos");
@@ -90,7 +86,7 @@ public class interTable extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         pack();
@@ -129,19 +125,7 @@ private void mostrarDatos() {
         fila[0] = alumno.getLegajo();
         fila[1] = alumno.getNombre();
         fila[2] = alumno.getApellido();
-        
-
-//        StringBuilder materiasStr = new StringBuilder();
-//        for (Materia materia : alumno.getMateriasIns()) {
-//            materiasStr.append(materia.getIdMateria()).append(", ");
-//        }
-//        if (materiasStr.length() > 0) {
-//            materiasStr.deleteCharAt(materiasStr.length() - 2);
-//        } else {
-//            materiasStr.append("Ninguna materia");
-//        }
-
-        fila[3] = alumno.cantMateriasIns();
+        fila[3] = alumno.getMateriasIns();
         modelo.addRow(fila);
 
         

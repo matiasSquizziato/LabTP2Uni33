@@ -12,7 +12,7 @@ import static labtp2uni3.app.Alumno.listaAlumnos;
  *
  * @author matiSqui
  */
-public class interTable extends javax.swing.JInternalFrame {
+public class InterTable extends javax.swing.JInternalFrame {
 
     
     private DefaultTableModel modelo = new DefaultTableModel();
@@ -21,7 +21,7 @@ public class interTable extends javax.swing.JInternalFrame {
     /**
      * Creates new form interTable
      */
-    public interTable() {
+    public InterTable() {
         initComponents();
         armarCabecera();
         mostrarDatos();
@@ -125,7 +125,7 @@ private void mostrarDatos() {
         fila[0] = alumno.getLegajo();
         fila[1] = alumno.getNombre();
         fila[2] = alumno.getApellido();
-        fila[3] = alumno.getMateriasIns();
+        fila[3] = alumno.listaInscrip.size();
         modelo.addRow(fila);
 
         

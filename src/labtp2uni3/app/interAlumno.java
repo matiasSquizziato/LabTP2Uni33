@@ -4,23 +4,25 @@
  */
 package labtp2uni3.app;
 
+import java.awt.event.FocusEvent;
 import java.util.HashSet;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import static labtp2uni3.app.Alumno.listaAlumnos;
 
 /**
  *
  * @author matiSqui
  */
-public class interAlumno extends javax.swing.JInternalFrame {
-    
+public class InterAlumno extends javax.swing.JInternalFrame {
+
     /**
      * Creates new form interAlumno
      */
-    public interAlumno() {
-        
+    public InterAlumno() {
+
         initComponents();
-       
+
     }
 
     @SuppressWarnings("unchecked")
@@ -127,35 +129,46 @@ public class interAlumno extends javax.swing.JInternalFrame {
 
     private void btGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuardarActionPerformed
 
-        int valLegajo = Integer.parseInt(txNumLegajo.getText());
-        String valNombre = txNombre.getText();
-        String valApellido = txApellido.getText();
-        
-        Alumno alumnoNuevo = new Alumno(valLegajo,valNombre, valApellido);
-      
-        
-        alumnoNuevo.agregarAlumnos(alumnoNuevo);
-        
-        
-        //Limpia los campos una vez creado el elemnto
-        txNumLegajo.setText("");
-        txNombre.setText("");
-        txApellido.setText("");
-  
+        if (txApellido.getText().trim().isEmpty() || txNombre.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "Los campos no deben estás vacíos. ");
+        } else {
+            try {
+                int valLegajo = Integer.parseInt(txNumLegajo.getText());
+                String valNombre = txNombre.getText();
+                String valApellido = txApellido.getText();
+
+                Alumno alumnoNuevo = new Alumno(valLegajo, valNombre, valApellido);
+
+                alumnoNuevo.agregarAlumnos(alumnoNuevo);
+
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(rootPane, "Debe ingresar un número. Exception: " + e);
+                txNumLegajo.requestFocus();
+
+            } catch (NullPointerException e) {
+                JOptionPane.showMessageDialog(rootPane, "Debe llenar todos los campos. Exception: " + e);
+                txNumLegajo.requestFocus();
+            }
+
+            //Limpia los campos una vez creado el elemnto
+            txNumLegajo.setText("");
+            txNombre.setText("");
+            txApellido.setText("");
+        }
     }//GEN-LAST:event_btGuardarActionPerformed
 
-  
+
     private void btNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNuevoActionPerformed
         txNumLegajo.setText("");
         txNombre.setText("");
         txApellido.setText("");
-        
+
     }//GEN-LAST:event_btNuevoActionPerformed
 
     private void btSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalirActionPerformed
-        
+
         dispose();
-        
+
     }//GEN-LAST:event_btSalirActionPerformed
 
 

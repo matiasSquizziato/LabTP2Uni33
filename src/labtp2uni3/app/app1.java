@@ -10,9 +10,9 @@ package labtp2uni3.app;
  *
  * @author matiSqui
  */
-public class app1 extends javax.swing.JFrame {
+public class App1 extends javax.swing.JFrame {
   
-    public app1() {
+    public App1() {
         initComponents();
     }
 
@@ -114,7 +114,7 @@ public class app1 extends javax.swing.JFrame {
     //Ingreso al inter de alumno
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         
-        interAlumno inAlumno = new interAlumno();
+        InterAlumno inAlumno = new InterAlumno();
         escritorio.add(inAlumno);
         inAlumno.setVisible(true);
         
@@ -123,7 +123,7 @@ public class app1 extends javax.swing.JFrame {
     //Ingreso a un listado de alumno
     private void listAluActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listAluActionPerformed
 
-          interTable inTable = new interTable();
+          InterTable inTable = new InterTable();
           escritorio.add(inTable);
           inTable.setVisible(true);
         
@@ -132,7 +132,7 @@ public class app1 extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
          
-       interMaterias inMateria = new interMaterias();
+       InterMaterias inMateria = new InterMaterias();
        escritorio.add(inMateria);
        inMateria.setVisible(true);
         
@@ -140,7 +140,7 @@ public class app1 extends javax.swing.JFrame {
 
     private void InscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InscripcionesActionPerformed
         
-         interInscrip inInscrip = new interInscrip();
+         InterInscrip inInscrip = new InterInscrip();
          escritorio.add(inInscrip);
          inInscrip.setVisible(true); 
          
@@ -160,20 +160,21 @@ public class app1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(app1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(App1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(app1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(App1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(app1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(App1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(app1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(App1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new app1().setVisible(true);
+                new App1().setVisible(true);
             }
         });
     }

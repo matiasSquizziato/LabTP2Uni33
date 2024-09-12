@@ -4,18 +4,18 @@
  */
 package labtp2uni3.app;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author matiSqui
  */
-public class interMaterias extends javax.swing.JInternalFrame {
+public class InterMaterias extends javax.swing.JInternalFrame {
 
-    
-    public interMaterias() {
+    public InterMaterias() {
         initComponents();
     }
 
-  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -114,25 +114,38 @@ public class interMaterias extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuardarActionPerformed
-        
-        int valId = Integer.parseInt(txId.getText());
-        String valNombre = txNombreMat.getText();
-        int valAnio = Integer.parseInt(txAnioCp.getText());
-        
-        Materia materia = new Materia(valId,valNombre, valAnio);
-        
-        materia.cargarMaterias(materia);
-        
-        //Limpio los campos luego de cargar los elementos
-        txId.setText("");
-        txNombreMat.setText("");
-        txAnioCp.setText("");
-        
+
+        if (txNombreMat.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "Los campos no deben estás vacíos. ");
+        } else {
+            try {
+                int valId = Integer.parseInt(txId.getText());
+                String valNombre = txNombreMat.getText();
+                int valAnio = Integer.parseInt(txAnioCp.getText());
+
+                Materia materia = new Materia(valId, valNombre, valAnio);
+
+                materia.cargarMaterias(materia);
+
+                //Limpio los campos luego de cargar los elementos
+                txId.setText("");
+                txNombreMat.setText("");
+                txAnioCp.setText("");
+
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(rootPane, "Debe ingresar un número. Exception: " + e);
+                txId.requestFocus();
+            } catch (NullPointerException e) {
+                JOptionPane.showMessageDialog(rootPane, "Debe llenar todos los campos. Exception: " + e);
+                txId.requestFocus();
+            }
+        }
+
     }//GEN-LAST:event_btGuardarActionPerformed
 
-    
+
     private void btNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNuevoActionPerformed
-        
+
         txId.setText("");
         txNombreMat.setText("");
         txAnioCp.setText("");
@@ -155,7 +168,5 @@ public class interMaterias extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txId;
     private javax.swing.JTextField txNombreMat;
     // End of variables declaration//GEN-END:variables
-
-
 
 }

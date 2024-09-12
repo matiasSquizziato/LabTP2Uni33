@@ -8,6 +8,6 @@ package labtp2uni3.app;
  *
  * @author matiSqui
  */
-class modelo {
+class Modelo {
     
 }

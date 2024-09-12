@@ -13,10 +13,10 @@ import static labtp2uni3.app.Alumno.listaAlumnos;
 import static labtp2uni3.app.Alumno.listaMaterias;
 
 
-public final class interInscrip extends javax.swing.JInternalFrame {
+public final class InterInscrip extends javax.swing.JInternalFrame {
     
 
-    public interInscrip() {
+    public InterInscrip() {
         initComponents();
         cargarDatosAlumnos();
         cargarDatosMaterias();
@@ -172,13 +172,14 @@ public final class interInscrip extends javax.swing.JInternalFrame {
     
         for (Alumno alumnos : listaAlumnos) {
             
-            int valLega = alumnos.getLegajo();
+            /*int valLega = alumnos.getLegajo();
             String valNombre = alumnos.getNombre();
             String valApellido = alumnos.getApellido();
             
-            Alumno alu = new Alumno(valLega, valNombre, valApellido);
+            //Alumno alu = new Alumno(valLega, valNombre, valApellido);
             
-            jcbAlumno.addItem(alu);
+            */
+            jcbAlumno.addItem(alumnos);
             
         }
 }
@@ -187,13 +188,13 @@ public final class interInscrip extends javax.swing.JInternalFrame {
         
         for (Materia materias : listaMaterias) {
             
-            int valId = materias.getIdMateria();
+            /*int valId = materias.getIdMateria();
             String valNombre = materias.getNombre();
             int valAnnio = materias.getYear();
             
             Materia mat = new Materia(valId, valNombre, valAnnio);
-            
-            jcbMaterias.addItem(mat);
+            */
+            jcbMaterias.addItem(materias);
             
         }
         

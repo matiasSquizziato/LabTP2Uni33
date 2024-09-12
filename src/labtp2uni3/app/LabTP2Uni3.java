@@ -16,7 +16,8 @@ public class LabTP2Uni3 {
     public static void main(String[] args) {
 
  
-
+        App1 ejecutar = new App1();
+        ejecutar.setVisible(true);
      
     }
     
